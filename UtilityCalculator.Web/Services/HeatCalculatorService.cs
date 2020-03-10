@@ -7,27 +7,27 @@
         /// http://www.travisindustries.com/CostOfHeating_WkSht.asp?P=2
         /// 
         /// </summary>
-        /// <param name="p">The size of the home in square feet</param>
+        /// <param name="sizeInSquareFeet">The size of the home in square feet</param>
         /// <param name="c">Climate zones</param>
         /// <returns></returns>
-        public static decimal CalculateCost(int p, string c)
+        public static decimal CalculateCost(int sizeInSquareFeet, string c)
         {
             // Mild winter
             if (c.Contains("M"))
             {
-                return (decimal)p * 1000 * 0.12m * 293 / 1000000;
+                return (decimal)sizeInSquareFeet * 1000 * 0.12m * 293 / 1000000;
             }
             else
             {
                 // Moderate winter
                 if (c.Contains("D"))
                 {
-                    return (decimal)p * 2000 * 0.12m * 293 / 1000000;
+                    return (decimal)sizeInSquareFeet * 2000 * 0.12m * 293 / 1000000;
                 }
                 else
                 {
                     // Severe winter
-                    if (p == 1500)
+                    if (sizeInSquareFeet == 1500)
                     {
                         return (decimal)5000000 * 0.12m * 293 / 1000000;
                     }
